@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raddragonpidgey (Rad) — Wiki</title>
+
+  <style>
+    :root{
+      --bg:#0b0f16;
+      --panel:#131a24;
+      --border:#1f2a3a;
+      --text:#e6e9ef;
+      --muted:#b4bcc9;
+      --accent:#5ff6da;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, Segoe UI, Roboto, Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+
+    .wrap{max-width:900px;margin:auto;padding:24px;}
+    h1{margin:0 0 6px;font-size:38px;}
+    h2{margin:32px 0 8px;font-size:22px;border-bottom:1px solid var(--border);}
+    h3{margin:22px 0 6px;font-size:18px;}
+    p{margin:0 0 10px;color:var(--muted);}
+    ul{margin:6px 0 10px 20px;color:var(--muted);}
+    li{margin-bottom:4px;}
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+      margin-top:16px;
+    }
+
+    /* FORM SWITCH */
+    .switch{
+      display:flex;
+      gap:10px;
+      margin:14px 0;
+    }
+    .btn{
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#0f1520;
+      color:var(--text);
+      cursor:pointer;
+    }
+    .btn.active{
+      border-color:var(--accent);
+      color:var(--accent);
+    }
+
+    /* IMAGE */
+    .image-box{
+      width:100%;
+      height:420px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      margin:10px 0 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#0f1520;
+    }
+    .image-box img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+    }
+
+    /* PROFILE TABLE */
+    .profile{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+    .field{
+      background:#0f1520;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:10px;
+    }
+    .field b{display:block;font-size:12px;color:var(--muted);}
+    .field span{font-size:14px;}
+
+    /* STATS */
+    .stat{margin-top:8px;}
+    .bar{
+      height:8px;
+      background:#0f1520;
+      border-radius:999px;
+      overflow:hidden;
+      border:1px solid var(--border);
+    }
+    .fill{
+      height:100%;
+      background:linear-gradient(90deg,var(--accent),rgba(95,246,218,.4));
+    }
+
+    footer{
+      margin:40px 0 10px;
+      text-align:center;
+      font-size:12px;
+      color:#7d8596;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- TITLE -->
+  <h1>Raddragonpidgey (Rad)</h1>
+  <p>
+    A Dragonal capable of gravity manipulation, existing in both human and dragonal forms
+    in a world reshaped by universal collapse.
+  </p>
+
+  <!-- OVERVIEW -->
+  <h2>Overview</h2>
+  <p>
+    Raddragonpidgey, commonly known as Rad, is a member of the Dragonal race — humans capable
+    of shapeshifting into dragon-based hybrid forms. Rad’s transformation results in a
+    wingless half-dragon, half-griffin body supported by advanced gravity manipulation.
+  </p>
+  <p>
+    He inhabits a post-collapse world where multiple universes fused into one, scattering
+    corrupted shards that infect living beings. As a member of Mytharxsis, Rad works to stop
+    the spread of corruption and protect untainted life.
+  </p>
+
+  <!-- FORMS -->
+  <h2>Forms</h2>
+
+  <div class="switch">
+    <button class="btn active" id="btnRad">Rad (Human)</button>
+    <button class="btn" id="btnDragon">Raddragonpidgey (Dragonal)</button>
+  </div>
+
+  <div class="image-box">
+    <img id="formImage" src="rad.png" alt="Rad">
+  </div>
+
+  <div class="card">
+    <h3 id="formTitle">Rad — Human Form</h3>
+    <p id="formDescription"></p>
+
+    <h3>Profile</h3>
+    <div class="profile" id="profile"></div>
+
+    <h3>Quick Notes</h3>
+    <ul id="notes"></ul>
+
+    <h3>Bio</h3>
+    <p id="bio"></p>
+  </div>
+
+  <!-- ABILITIES -->
+  <h2>Abilities</h2>
+  <p>
+    Rad possesses gravity manipulation that functions identically in both forms.
+    The transformation affects physical capability, not power origin.
+  </p>
+  <ul>
+    <li>Directional gravity control (including sideways falling)</li>
+    <li>Object gravity alteration through contact</li>
+    <li>Localized gravity amplification or reduction</li>
+  </ul>
+
+  <!-- STATS -->
+  <h2>Statistics</h2>
+  <div class="card" id="stats"></div>
+
+  <!-- WORLD -->
+  <h2>World & Lore</h2>
+  <p>
+    A universal collapse fused multiple realities into one, raining corrupted shards
+    that infect living beings. Corrupted entities instinctively attack anything uncorrupted,
+    destabilizing what remains of civilization.
+  </p>
+
+  <!-- MYTHARXSIS -->
+  <h2>Mytharxsis</h2>
+  <p>
+    Mytharxsis is a leaderless, found-family alliance formed in response to the corruption.
+    Members are bound by trust rather than hierarchy. Rad is an active member who uses
+    his abilities to confront corrupted threats directly.
+  </p>
+
+  <!-- TRIVIA -->
+  <h2>Trivia</h2>
+  <ul>
+    <li>Rad has an intense fear of dolls.</li>
+    <li>The numbers 7 and 2 on his jacket form “72,” symbolizing an R.</li>
+    <li>He was born wingless due to a disability.</li>
+    <li>Has hitchhiker’s thumbs.</li>
+  </ul>
+
+  <footer>
+    Raddragonpidgey (Rad) — Wiki Entry • v1.0
+  </footer>
+</div>
+
+<script>
+const DATA = {
+  gravity:74,
+  rad:{
+    title:"Rad — Human Form",
+    image:"rad.png",
+    description:
+      "Rad’s human form is relaxed and unbothered. He does not attempt to blend in and carries himself quietly, conserving energy unless something truly matters.",
+    profile:{
+      Name:"Rad",
+      Age:"18",
+      Species:"Dragonal (Human)",
+      Heritage:"Half Dragon • Half Griffin"
+    },
+    notes:[
+      "Doesn’t listen well",
+      "Stronger than he looks",
+      "Gets angry easily",
+      "Hitchhiker’s thumbs"
+    ],
+    bio:
+      "Rad avoids unnecessary interaction with strangers and is fully himself around friends. Lazy by nature, he can become sharply energetic when needed. He fears losing people far more than losing control and genuinely enjoys being part of Mytharxsis."
+  },
+  dragon:{
+    title:"Raddragonpidgey — Dragonal Form",
+    image:"raddragonpidgey.png",
+    description:
+      "This form is heavier, louder, and more intimidating. Despite lacking wings, Rad moves through gravity manipulation, falling in any direction.",
+    profile:{
+      Name:"Raddragonpidgey",
+      Species:"Dragonal (Transformed)",
+      Wings:"Absent (disability)",
+      Movement:"Directional gravity falling"
+    },
+    notes:[
+      "Same personality as Rad",
+      "Larger physical presence",
+      "Temper carries greater impact",
+      "Roar shifts between dragon and griffin"
+    ],
+    bio:
+      "Rad’s personality does not change when transformed. He simply gains a body capable of enduring chaos, protecting others, and confronting corruption directly."
+  }
+};
+
+const els={
+  img:document.getElementById("formImage"),
+  title:document.getElementById("formTitle"),
+  desc:document.getElementById("formDescription"),
+  profile:document.getElementById("profile"),
+  notes:document.getElementById("notes"),
+  bio:document.getElementById("bio"),
+  stats:document.getElementById("stats"),
+  btnRad:document.getElementById("btnRad"),
+  btnDragon:document.getElementById("btnDragon")
+};
+
+function render(key){
+  const d=DATA[key];
+  els.img.src=d.image;
+  els.title.textContent=d.title;
+  els.desc.textContent=d.description;
+  els.profile.innerHTML=
+    Object.entries(d.profile).map(([k,v])=>`<div class="field"><b>${k}</b><span>${v}</span></div>`).join("");
+  els.notes.innerHTML=d.notes.map(n=>`<li>${n}</li>`).join("");
+  els.bio.textContent=d.bio;
+
+  els.stats.innerHTML=`
+    ${stat("Defense", key==="rad"?42:78)}
+    ${stat("Strength", key==="rad"?38:70)}
+    ${stat("Vision", key==="rad"?62:86)}
+    ${stat("Gravity Control", DATA.gravity)}
+  `;
+}
+
+function stat(name,val){
+  return `
+    <div class="stat">
+      <b>${name} — ${val}</b>
+      <div class="bar"><div class="fill" style="width:${val}%"></div></div>
+    </div>
+  `;
+}
+
+els.btnRad.onclick=()=>{set("rad")};
+els.btnDragon.onclick=()=>{set("dragon")};
+
+function set(k){
+  els.btnRad.classList.toggle("active",k==="rad");
+  els.btnDragon.classList.toggle("active",k==="dragon");
+  render(k);
+}
+
+set("rad");
+</script>
+
+</body>
+</html>
