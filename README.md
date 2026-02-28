@@ -1,2 +1,0 @@
-# Raddragonpidgey
-Who is Raddragonpidgey?
